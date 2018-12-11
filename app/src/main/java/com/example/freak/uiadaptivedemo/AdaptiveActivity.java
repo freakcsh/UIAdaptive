@@ -2,6 +2,7 @@ package com.example.freak.uiadaptivedemo;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Window;
 
 import com.example.freak.uiadaptivedemo.base.IActivityStatusBar;
@@ -47,5 +48,6 @@ public class AdaptiveActivity extends AppCompatActivity implements IActivityStat
     @Override
     public void initView() {
         window = getWindow();
+        Log.e("TAG","刘海屏高度"+ BangScreenUtil.getBangScreenInstance().getDisplayCutoutSize(window));
     }
 }

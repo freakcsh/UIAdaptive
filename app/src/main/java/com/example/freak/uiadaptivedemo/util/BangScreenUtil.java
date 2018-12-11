@@ -1,5 +1,6 @@
 package com.example.freak.uiadaptivedemo.util;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Rect;
@@ -68,7 +69,7 @@ public class BangScreenUtil {
     /**
      * 获取刘海屏的大小
      */
-    private List<Rect> getDisplayCutoutSize(Window window) {
+    public List<Rect> getDisplayCutoutSize(Window window) {
         if (bangScreenSupport == null)
             checkScreenSupportInit();
         if (bangScreenSupport == null) return new ArrayList<Rect>();
@@ -240,4 +241,31 @@ public class BangScreenUtil {
 
         }
     }
+
+
+    /**
+     * 获取手机厂商
+     *
+     * @return  手机厂商
+     */
+
+    public final static int DEVICE_BRAND_OPPO = 0x0001;
+    public final static int DEVICE_BRAND_HUAWEI = 0x0002;
+    public final static int DEVICE_BRAND_VIVO = 0x0003;
+    @SuppressLint("DefaultLocale")
+    public static int getDeviceBrand() {
+        String brand = android.os.Build.BRAND.trim().toUpperCase();
+        if (brand.contains("HUAWEI")) {
+            Log.d("device brand", "HUAWEI");
+            return DEVICE_BRAND_HUAWEI;
+        }else if (brand.contains("OPPO")) {
+            Log.d("device brand", "OPPO");
+            return DEVICE_BRAND_OPPO;
+        }else if (brand.contains("VIVO")) {
+            Log.d("device brand", "VIVO");
+            return DEVICE_BRAND_VIVO;
+        }
+        return 0;
+    }
+
 }
