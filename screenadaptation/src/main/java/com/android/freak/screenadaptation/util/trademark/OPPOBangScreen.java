@@ -1,4 +1,4 @@
-package com.example.freak.uiadaptivedemo.util.trademark;
+package com.android.freak.screenadaptation.util.trademark;
 
 import android.content.Context;
 import android.graphics.Rect;
@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.example.freak.uiadaptivedemo.util.BangScreenSupport;
+import com.android.freak.screenadaptation.util.BangScreenSupport;
 
 import java.util.ArrayList;
 import java.util.List;

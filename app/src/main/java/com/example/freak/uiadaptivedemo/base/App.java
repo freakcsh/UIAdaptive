@@ -21,8 +21,8 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.android.freak.screenadaptation.util.BangScreenUtil;
 import com.example.freak.uiadaptivedemo.R;
-import com.example.freak.uiadaptivedemo.util.BangScreenUtil;
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.FormatStrategy;
 import com.orhanobut.logger.Logger;

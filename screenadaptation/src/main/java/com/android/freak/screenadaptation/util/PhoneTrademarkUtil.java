@@ -1,4 +1,4 @@
-package com.example.freak.uiadaptivedemo.util;
+package com.android.freak.screenadaptation.util;
 
 import android.os.Build;
 import android.text.TextUtils;

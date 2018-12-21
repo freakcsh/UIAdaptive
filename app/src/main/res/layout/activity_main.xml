@@ -32,4 +32,16 @@
         android:text="不适应刘海屏区域"
         android:onClick="unUseBang"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="检测手机品牌"
+        android:onClick="detection"/>
+    <TextView
+        android:id="@+id/text_view_device_name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textSize="20pt"/>
+
 </LinearLayout>

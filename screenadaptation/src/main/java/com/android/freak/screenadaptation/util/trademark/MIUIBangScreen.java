@@ -1,4 +1,4 @@
-package com.example.freak.uiadaptivedemo.util.trademark;
+package com.android.freak.screenadaptation.util.trademark;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -9,9 +9,9 @@ import android.support.annotation.RequiresApi;
 import android.util.Log;
 import android.view.Window;
 
-import com.example.freak.uiadaptivedemo.util.BangScreenSupport;
-import com.example.freak.uiadaptivedemo.util.BangScreenUtil;
-import com.example.freak.uiadaptivedemo.util.SystemProperties;
+import com.android.freak.screenadaptation.util.BangScreenSupport;
+import com.android.freak.screenadaptation.util.BangScreenUtil;
+import com.android.freak.screenadaptation.util.SystemProperties;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;

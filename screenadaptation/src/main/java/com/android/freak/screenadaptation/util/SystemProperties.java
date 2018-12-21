@@ -1,10 +1,10 @@
-package com.example.freak.uiadaptivedemo.util;
+package com.android.freak.screenadaptation.util;
 
 import android.util.Log;
 
 import java.lang.reflect.Method;
 
-import static com.example.freak.uiadaptivedemo.util.BangScreenUtil.TAG;
+import static com.android.freak.screenadaptation.util.BangScreenUtil.TAG;
 
 public class SystemProperties {
     private static Method getStringProperty;

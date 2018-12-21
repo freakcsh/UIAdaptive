@@ -1,13 +1,16 @@
 package com.example.freak.uiadaptivedemo;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.TextView;
 
+import com.android.freak.screenadaptation.util.BangScreenUtil;
 import com.example.freak.uiadaptivedemo.base.IActivityStatusBar;
 
 public class MainActivity extends AppCompatActivity implements IActivityStatusBar {
+    private TextView mTextViewDeviceName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,38 +30,58 @@ public class MainActivity extends AppCompatActivity implements IActivityStatusBa
 
     @Override
     public void initView() {
-
+        mTextViewDeviceName = findViewById(R.id.text_view_device_name);
     }
 
     /**
      * 沉浸式状态栏
+     *
      * @param view
      */
     public void immersion(View view) {
-        startActivity(new Intent(this,AdaptiveActivity.class).putExtra("type","0"));
+        startActivity(new Intent(this, AdaptiveActivity.class).putExtra("type", "0"));
     }
 
     /**
      * 隐藏状态栏
+     *
      * @param view
      */
     public void gone(View view) {
-        startActivity(new Intent(this,AdaptiveActivity.class).putExtra("type","1"));
+        startActivity(new Intent(this, AdaptiveActivity.class).putExtra("type", "1"));
     }
 
     /**
      * 全面屏
+     *
      * @param view
      */
     public void overall(View view) {
-        startActivity(new Intent(this,AdaptiveActivity.class).putExtra("type","2"));
+        startActivity(new Intent(this, AdaptiveActivity.class).putExtra("type", "2"));
     }
 
     /**
      * 不使用刘海屏
+     *
      * @param view
      */
-      public void unUseBang(View view) {
-        startActivity(new Intent(this,AdaptiveActivity.class).putExtra("type","3"));
+    public void unUseBang(View view) {
+        startActivity(new Intent(this, AdaptiveActivity.class).putExtra("type", "3"));
+    }
+
+    /**
+     * 检测手机品牌
+     * @param view
+     */
+    public void detection(View view) {
+        if (BangScreenUtil.getDeviceName() == BangScreenUtil.DEVICE_HUAWEI) {
+            mTextViewDeviceName.setText("华为");
+        }else if (BangScreenUtil.getDeviceName() == BangScreenUtil.DEVICE_MIUI){
+            mTextViewDeviceName.setText("小米");
+        }else if (BangScreenUtil.getDeviceName() == BangScreenUtil.DEVICE_OPPO){
+            mTextViewDeviceName.setText("OPPO");
+        }else if (BangScreenUtil.getDeviceName() == BangScreenUtil.DEVICE_VIVO){
+            mTextViewDeviceName.setText("VIVO");
+        }
     }
 }

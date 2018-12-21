@@ -1,6 +1,5 @@
-package com.example.freak.uiadaptivedemo.util;
+package com.android.freak.screenadaptation.util;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Rect;
@@ -11,11 +10,11 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.example.freak.uiadaptivedemo.util.trademark.AndroidPBangScreen;
-import com.example.freak.uiadaptivedemo.util.trademark.HuaWeiBangScreen;
-import com.example.freak.uiadaptivedemo.util.trademark.MIUIBangScreen;
-import com.example.freak.uiadaptivedemo.util.trademark.OPPOBangScreen;
-import com.example.freak.uiadaptivedemo.util.trademark.VIVOBangScreen;
+import com.android.freak.screenadaptation.util.trademark.AndroidPBangScreen;
+import com.android.freak.screenadaptation.util.trademark.HuaWeiBangScreen;
+import com.android.freak.screenadaptation.util.trademark.MIUIBangScreen;
+import com.android.freak.screenadaptation.util.trademark.OPPOBangScreen;
+import com.android.freak.screenadaptation.util.trademark.VIVOBangScreen;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,13 +24,17 @@ import static android.view.View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION;
 import static android.view.View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
 
 public class BangScreenUtil {
-    private static  BangScreenUtil mBangScreenUtil;
+    private static BangScreenUtil mBangScreenUtil;
     protected static final String TAG = "BangScreenUtil";
     private final int systemCode = android.os.Build.VERSION.SDK_INT;
     private BangScreenSupport bangScreenSupport;
     private boolean isHaveResult;
     private boolean isBangScree;
     private int statusBarHeight = -1;
+    public final static int DEVICE_HUAWEI = 0x0001;//华为
+    public final static int DEVICE_OPPO = 0x0002;//OPPO
+    public final static int DEVICE_VIVO = 0x0003;//VIVO
+    public final static int DEVICE_MIUI = 0x0004;//小米
     /**
      * 获取刘海屏单例
      *
@@ -133,9 +136,9 @@ public class BangScreenUtil {
     }
 
 
-
     /**
-     *获取状态栏高度
+     * 获取状态栏高度
+     *
      * @param context
      * @return 状态栏高度
      */
@@ -181,6 +184,7 @@ public class BangScreenUtil {
 
     /**
      * 设置始终不使用凹口屏区域
+     *
      * @param window the window
      */
     public void blockDisplayCutout(Window window) {
@@ -216,6 +220,7 @@ public class BangScreenUtil {
         window.getDecorView().setSystemUiVisibility(SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION | SYSTEM_UI_FLAG_LAYOUT_STABLE);
         bangScreenSupport.extendStatusCutout(window, context);
     }
+
     /**
      * 设置始终使用凹口屏区域并将状态栏透明 沉浸式状态栏
      * * always to use bangScreen and layout extend to status bar,
@@ -246,24 +251,22 @@ public class BangScreenUtil {
     /**
      * 获取手机厂商
      *
-     * @return  手机厂商
+     * @return 手机厂商
      */
-
-    public final static int DEVICE_BRAND_OPPO = 0x0001;
-    public final static int DEVICE_BRAND_HUAWEI = 0x0002;
-    public final static int DEVICE_BRAND_VIVO = 0x0003;
-    @SuppressLint("DefaultLocale")
-    public static int getDeviceBrand() {
-        String brand = android.os.Build.BRAND.trim().toUpperCase();
-        if (brand.contains("HUAWEI")) {
-            Log.d("device brand", "HUAWEI");
-            return DEVICE_BRAND_HUAWEI;
-        }else if (brand.contains("OPPO")) {
-            Log.d("device brand", "OPPO");
-            return DEVICE_BRAND_OPPO;
-        }else if (brand.contains("VIVO")) {
-            Log.d("device brand", "VIVO");
-            return DEVICE_BRAND_VIVO;
+    public static int getDeviceName() {
+        PhoneTrademarkUtil phoneTrademarkUtil = PhoneTrademarkUtil.getPhoneTrademark();
+        if (phoneTrademarkUtil.isHuaWei()) {
+            Log.i(TAG, "HuaWei");
+            return DEVICE_HUAWEI;
+        } else if (phoneTrademarkUtil.isMIUI()) {
+            Log.i(TAG, "MIUI");
+            return DEVICE_MIUI;
+        } else if (phoneTrademarkUtil.isVIVO()) {
+            Log.i(TAG, "VIVO");
+            return DEVICE_VIVO;
+        } else if (phoneTrademarkUtil.isOPPO()) {
+            Log.i(TAG, "OPPO");
+            return DEVICE_OPPO;
         }
         return 0;
     }

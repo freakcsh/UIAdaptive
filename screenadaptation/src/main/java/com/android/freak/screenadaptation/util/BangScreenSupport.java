@@ -1,4 +1,4 @@
-package com.example.freak.uiadaptivedemo.util;
+package com.android.freak.screenadaptation.util;
 
 import android.content.Context;
 import android.graphics.Rect;
