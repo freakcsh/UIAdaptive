@@ -37,6 +37,7 @@ allprojects {
 	    <artifactId>UIAdaptive</artifactId>
 	    <version>V1.0</version>
 	</dependency>
+        
     
   
   
