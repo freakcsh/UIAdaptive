@@ -1,4 +1,4 @@
-package com.example.freak.uiadaptivedemo.base;
+package com.example.freak.uiadaptive.base;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -22,7 +22,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.android.freak.screenadaptation.util.BangScreenUtil;
-import com.example.freak.uiadaptivedemo.R;
+import com.example.freak.uiadaptive.R;
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.FormatStrategy;
 import com.orhanobut.logger.Logger;

@@ -1,4 +1,4 @@
-package com.example.freak.uiadaptivedemo;
+package com.example.freak.uiadaptive;
 
 import org.junit.Test;
 

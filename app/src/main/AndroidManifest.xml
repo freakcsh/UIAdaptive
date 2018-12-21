@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.freak.uiadaptivedemo">
+    package="com.example.freak.uiadaptive">
 
     <application
-        android:name=".base.App"
+        android:name="com.example.freak.uiadaptive.base.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -16,14 +16,14 @@
             android:name="android.notch_support"
             android:value="true" />
 
-        <activity android:name=".MainActivity">
+        <activity android:name="com.example.freak.uiadaptive.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AdaptiveActivity"></activity>
+        <activity android:name="com.example.freak.uiadaptive.AdaptiveActivity"></activity>
     </application>
 
 </manifest>

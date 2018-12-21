@@ -1,4 +1,4 @@
-package com.example.freak.uiadaptivedemo;
+package com.example.freak.uiadaptive;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.android.freak.screenadaptation.util.BangScreenUtil;
-import com.example.freak.uiadaptivedemo.base.IActivityStatusBar;
+import com.example.freak.uiadaptive.base.IActivityStatusBar;
 
 public class MainActivity extends AppCompatActivity implements IActivityStatusBar {
     private TextView mTextViewDeviceName;

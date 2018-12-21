@@ -1,4 +1,4 @@
-package com.example.freak.uiadaptivedemo.base;
+package com.example.freak.uiadaptive.base;
 
 /**
  * Created by Administrator on 2018/4/4.

@@ -1,4 +1,4 @@
-package com.example.freak.uiadaptivedemo;
+package com.example.freak.uiadaptive;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
