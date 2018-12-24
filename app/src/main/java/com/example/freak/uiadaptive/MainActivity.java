@@ -26,13 +26,14 @@ public class MainActivity extends AppCompatActivity implements IActivityStatusBa
 
     @Override
     public void initData() {
-        Logger.e("主分支");
+        Logger.e("子分支");
     }
 
     @Override
     public void initView() {
         mTextViewDeviceName = findViewById(R.id.text_view_device_name);
-        Logger.e("主分支");
+
+        Logger.e("子分支");
     }
 
     /**
@@ -73,16 +74,17 @@ public class MainActivity extends AppCompatActivity implements IActivityStatusBa
 
     /**
      * 检测手机品牌
+     *
      * @param view
      */
     public void detection(View view) {
         if (BangScreenUtil.getDeviceName() == BangScreenUtil.DEVICE_HUAWEI) {
             mTextViewDeviceName.setText("华为");
-        }else if (BangScreenUtil.getDeviceName() == BangScreenUtil.DEVICE_MIUI){
+        } else if (BangScreenUtil.getDeviceName() == BangScreenUtil.DEVICE_MIUI) {
             mTextViewDeviceName.setText("小米");
-        }else if (BangScreenUtil.getDeviceName() == BangScreenUtil.DEVICE_OPPO){
+        } else if (BangScreenUtil.getDeviceName() == BangScreenUtil.DEVICE_OPPO) {
             mTextViewDeviceName.setText("OPPO");
-        }else if (BangScreenUtil.getDeviceName() == BangScreenUtil.DEVICE_VIVO){
+        } else if (BangScreenUtil.getDeviceName() == BangScreenUtil.DEVICE_VIVO) {
             mTextViewDeviceName.setText("VIVO");
         }
     }

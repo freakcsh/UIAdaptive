@@ -149,10 +149,6 @@ public class App  extends MultiDexApplication {
         return null;
     }
 
-    public void a(Activity activity){
-        Window window=activity.getWindow();
-        BangScreenUtil.getBangScreenInstance().blockDisplayCutout(window);
-    }
 
     /**
      * 设置状态栏
@@ -203,9 +199,6 @@ public class App  extends MultiDexApplication {
         View statusBar = new View(activity);
         ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         Window window=activity.getWindow();
-        /**
-         * 使用PT适配之后刘海屏的高度会改变，如果是刘海屏，则获取刘海屏的状态栏高度，如果不是刘海屏，则获取系统的状态栏高度即可
-         */
         if (BangScreenUtil.getBangScreenInstance().hasBangScreen(window)){
             Logger.e("是刘海屏");
             params.height=getNotchSize(activity)[1];
