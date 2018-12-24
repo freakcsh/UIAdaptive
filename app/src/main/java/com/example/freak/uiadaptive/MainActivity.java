@@ -26,13 +26,13 @@ public class MainActivity extends AppCompatActivity implements IActivityStatusBa
 
     @Override
     public void initData() {
-        Logger.e("测试创建分支");
+        Logger.e("子分支");
     }
 
     @Override
     public void initView() {
         mTextViewDeviceName = findViewById(R.id.text_view_device_name);
-        Logger.e("创建分支后修改");
+        Logger.e("子分支");
     }
 
     /**
