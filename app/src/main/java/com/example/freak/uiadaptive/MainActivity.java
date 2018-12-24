@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.android.freak.screenadaptation.util.BangScreenUtil;
 import com.example.freak.uiadaptive.base.IActivityStatusBar;
+import com.orhanobut.logger.Logger;
 
 public class MainActivity extends AppCompatActivity implements IActivityStatusBar {
     private TextView mTextViewDeviceName;
@@ -25,12 +26,13 @@ public class MainActivity extends AppCompatActivity implements IActivityStatusBa
 
     @Override
     public void initData() {
-
+        Logger.e("主分支");
     }
 
     @Override
     public void initView() {
         mTextViewDeviceName = findViewById(R.id.text_view_device_name);
+        Logger.e("主分支");
     }
 
     /**
