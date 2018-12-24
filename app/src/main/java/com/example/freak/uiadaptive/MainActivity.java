@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.android.freak.screenadaptation.util.BangScreenUtil;
 import com.example.freak.uiadaptive.base.IActivityStatusBar;
+import com.orhanobut.logger.Logger;
 
 public class MainActivity extends AppCompatActivity implements IActivityStatusBar {
     private TextView mTextViewDeviceName;
@@ -25,12 +26,13 @@ public class MainActivity extends AppCompatActivity implements IActivityStatusBa
 
     @Override
     public void initData() {
-
+        Logger.e("测试创建分支");
     }
 
     @Override
     public void initView() {
         mTextViewDeviceName = findViewById(R.id.text_view_device_name);
+        Logger.e("创建分支后修改");
     }
 
     /**
@@ -71,16 +73,17 @@ public class MainActivity extends AppCompatActivity implements IActivityStatusBa
 
     /**
      * 检测手机品牌
+     *
      * @param view
      */
     public void detection(View view) {
         if (BangScreenUtil.getDeviceName() == BangScreenUtil.DEVICE_HUAWEI) {
             mTextViewDeviceName.setText("华为");
-        }else if (BangScreenUtil.getDeviceName() == BangScreenUtil.DEVICE_MIUI){
+        } else if (BangScreenUtil.getDeviceName() == BangScreenUtil.DEVICE_MIUI) {
             mTextViewDeviceName.setText("小米");
-        }else if (BangScreenUtil.getDeviceName() == BangScreenUtil.DEVICE_OPPO){
+        } else if (BangScreenUtil.getDeviceName() == BangScreenUtil.DEVICE_OPPO) {
             mTextViewDeviceName.setText("OPPO");
-        }else if (BangScreenUtil.getDeviceName() == BangScreenUtil.DEVICE_VIVO){
+        } else if (BangScreenUtil.getDeviceName() == BangScreenUtil.DEVICE_VIVO) {
             mTextViewDeviceName.setText("VIVO");
         }
     }
